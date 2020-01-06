@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
 import { connect } from "react-redux"
-import { basicAction } from "./redux/actionCreators"
+import { basicAction } from "../../redux/actionCreators"
 
-class App extends React.Component {
+class Home extends React.Component {
   render(){
     console.log(this.props.basicReducerState)
     return (
@@ -23,4 +22,4 @@ const mapDispatchToProps = {
   basicAction: basicAction
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
