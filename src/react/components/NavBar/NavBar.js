@@ -2,7 +2,9 @@ import React from "react";
 
 class NavBar extends React.Component {
   render() {
-    return;
+    return(
+        <h1>hello</h1>
+    );
   }
 }
 

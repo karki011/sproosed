@@ -4,7 +4,9 @@ class LoginForm extends React.Component {
   state = { username: "", password: "" };
 
   render() {
-    return;
+    return(
+        <h1>hello</h1>
+    );
   }
 }
 
