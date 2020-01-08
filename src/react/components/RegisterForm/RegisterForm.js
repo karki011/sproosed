@@ -48,7 +48,7 @@ class RegisterForm extends React.Component {
           <Avatar className={useStyles.avatar}>
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Sproosed
           </Typography>
           <form className={useStyles.form} noValidate>
             <Grid container spacing={2}>
