@@ -2,7 +2,7 @@ import React from "react";
 import {
   Container,
   CssBaseline,
-  // Avatar, May include our own Avatar Image or a User's Avatar Image in its place
+  Avatar, 
   Typography,
   TextField,
   FormControlLabel,
@@ -45,8 +45,8 @@ class RegisterForm extends React.Component {
         <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
-          {/* <Avatar className={useStyles.avatar}>
-          </Avatar> */}
+          <Avatar className={useStyles.avatar}>
+          </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
@@ -54,25 +54,14 @@ class RegisterForm extends React.Component {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="fname"
-                  name="firstName"
+                  autoComplete="name"
+                  name="name"
                   variant="outlined"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="name"
+                  label="Name"
                   autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -86,6 +75,17 @@ class RegisterForm extends React.Component {
                   autoComplete="email"
                 />
               </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="address"
+                  label="Address"
+                  name="address"
+                  autoComplete="address"
+                />
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                   variant="outlined"
@@ -96,6 +96,17 @@ class RegisterForm extends React.Component {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="confirmPassword"
+                  label="Confirm Password"
+                  type="confirmPassword"
+                  id="confirmPassword"
                 />
               </Grid>
               <Grid item xs={12}>

@@ -2,7 +2,7 @@ import React from "react";
 import {
   Container,
   CssBaseline,
-  // Avatar, May include our own Avatar Image or a User's Avatar Image in its place
+  Avatar,
   Typography,
   TextField,
   FormControlLabel,
@@ -46,8 +46,8 @@ class LoginForm extends React.Component {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
-          {/* <Avatar className={useStyles.avatar}>
-          </Avatar> */}
+          <Avatar className={useStyles.avatar}>
+          </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
