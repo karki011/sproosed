@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux"
 import { basicAction } from "../../redux/actionCreators"
-import { CustomerCard } from "../components"
+import { NavBar } from "../components"
 
 class Home extends React.Component {
   render(){
@@ -12,7 +12,7 @@ class Home extends React.Component {
         <h1>sproosed</h1>
         <button onClick={() => {this.props.basicAction()}}>Test</button>
       </div>
-      <CustomerCard />
+      <NavBar />
       </>
     );
   }
