@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux"
+import { basicAction } from "../../redux/actionCreators"
 import {Request, NavBar } from "../components"
+
 
 class History extends React.Component {
   render(){
@@ -19,4 +21,12 @@ class History extends React.Component {
   }
 }
 
-export default (History);
+const mapStateToProps = (state) => ({
+  basicReducerState: state.basicReducer
+})
+
+const mapDispatchToProps = {
+  basicAction: basicAction
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(History);
