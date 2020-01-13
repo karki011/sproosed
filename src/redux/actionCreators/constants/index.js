@@ -1,4 +1,4 @@
-export const domain = ""
+export const domain = "https://vast-spire-30392.herokuapp.com/api"
 
 export const jsonHeaders = {
     "Content-Type": "application/json",
