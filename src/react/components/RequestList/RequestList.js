@@ -1,30 +1,23 @@
-import React from 'react';
-import { connect } from "react-redux"
-import Card from "@material-ui/core/Card"
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { connect } from "react-redux";
 import "./RequestList.css";
 class RequestList extends React.Component {
- 
-
-  render(){
-    
+  render() {
     return (
       <div className="UnderLine">
-      <div className="INFO">
-      Grounds keepers information
-     </div>
-     </div>
+        <div className="INFO">
+          <div>Grounds keeper</div>
+          <div className="cost">Price</div>
+        </div>
+      </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   basicReducerState: state.basicReducer
-})
+});
 
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RequestList);
