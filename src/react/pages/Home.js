@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux"
 import { basicAction } from "../../redux/actionCreators"
+import { NavBar } from "../components"
 import {Request} from "../components/index"
 import "./Home.css"
 
@@ -9,6 +10,7 @@ class Home extends React.Component {
     console.log(this.props.basicReducerState)
     return (
       <>
+      <NavBar />
       <div className="App">
                 <div className="Requests">Open Requests</div>
               
