@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux"
 import { basicAction } from "../../redux/actionCreators"
-import {Request} from "../components/index"
+import {Request, NavBar } from "../components"
 
 
 class History extends React.Component {
@@ -9,6 +9,7 @@ class History extends React.Component {
     console.log(this.props.basicReducerState)
     return (
       <>
+      <NavBar/>
       <div className="App">
                 <div className="Requests">Past Requests</div>
               

@@ -1,20 +1,17 @@
 import React, { Component } from "react";
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-
+import { NavLink } from 'react-router-dom'
+import './NavBar.css'
 
 class NavBar extends Component {
   render() {
     return (
-      <>
-        <Tabs
-          centered
-        >
-          <Tab label = 'My Profile' />
-          <Tab label='My Requests' />
-          <Tab label='History' />
-        </Tabs>
-      </>
+      <React.Fragment>
+        <div className = 'Navbar'>
+      <NavLink className = 'notActive' activeClassName = 'active' exact to = '/profile'>My Profile</NavLink>
+      <NavLink className = 'notActive' activeClassName = 'active' to = '/home'>My Requests</NavLink>
+      <NavLink className = 'notActive' activeClassName = 'active' to = '/history'>History</NavLink>
+      </div>
+      </React.Fragment>
     );
   }
 }
