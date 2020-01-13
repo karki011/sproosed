@@ -8,6 +8,8 @@ import RequestServices from './RequestServices'
 import ViewQuotes from './ViewQuotes'
 import ViewRequests from './ViewRequests'
 import ServiceCategoryList from './ServiceCategoryList'
+import History from "./history"
+
 
 
 //export the page here with a path and the component name
@@ -20,5 +22,6 @@ export default {
   ViewQuotes: {path: './ViewQuotes/:user', component: ViewQuotes},
   ViewRequests: {path: './ViewRequests/:user', component: ViewRequests},
   ServiceCategoryList: { path: '/ServiceCategoryList', component: ServiceCategoryList},
+  History:{path:"/history", component:History},
   NotFound: { path: "*", component: NotFound }
 };

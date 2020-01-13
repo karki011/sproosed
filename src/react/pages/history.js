@@ -2,22 +2,19 @@ import React from 'react';
 import { connect } from "react-redux"
 import { basicAction } from "../../redux/actionCreators"
 import {Request} from "../components/index"
-import "./Home.css"
 
-class Home extends React.Component {
+
+class History extends React.Component {
   render(){
     console.log(this.props.basicReducerState)
     return (
       <>
       <div className="App">
-                <div className="Requests">Open Requests</div>
+                <div className="Requests">Past Requests</div>
               
-                <Request />
-                <Request />
                 <Request />
                 <a href=" " className="floating-btn">+</a>
       </div>
-
       </>
     );
   }
@@ -31,4 +28,4 @@ const mapDispatchToProps = {
   basicAction: basicAction
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(History);
