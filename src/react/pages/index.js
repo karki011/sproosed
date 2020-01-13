@@ -10,5 +10,6 @@ export default {
   Home: { path: "/", component: Home },
   Login: { path: "/login", component: Login },
   Register: { path: "/register", component: Register },
-  NotFound: { path: "*", component: NotFound }
+  NotFound: { path: "*", component: NotFound },
+
 };

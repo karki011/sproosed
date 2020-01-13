@@ -67,7 +67,7 @@ class RegisterForm extends React.Component {
               <Grid item xs={12}>
                 <TextField
                   variant="outlined"
-                  required
+                  requiredv
                   fullWidth
                   id="email"
                   label="Email Address"
