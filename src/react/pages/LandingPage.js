@@ -8,7 +8,7 @@ class LandingPage extends Component {
             <>
                 <div className='wrapper'>
                     <img src={Grass} className='background' alt='background' />
-                    <div className = 'bleh'>
+                    <div className = 'imageHolder'>
                     <img className='logo' src={Logo} alt='logo' />
                     </div>
                     <div className='groundskeeper'>
