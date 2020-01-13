@@ -13,6 +13,7 @@ class Home extends React.Component {
         <button onClick={() => {this.props.basicAction()}}>Test</button>
       </div>
       <CustomerCard />
+      
       </>
     );
   }

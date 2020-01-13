@@ -7,6 +7,7 @@ import MyRequests from './MyRequests';
 import RequestServices from './RequestServices'
 import ViewQuotes from './ViewQuotes'
 import ViewRequests from './ViewRequests'
+import ServiceCategoryList from './ServiceCategoryList'
 
 
 //export the page here with a path and the component name
@@ -18,5 +19,6 @@ export default {
   RequestServices: {path: '/RequestServices', component: RequestServices},
   ViewQuotes: {path: './ViewQuotes/:user', component: ViewQuotes},
   ViewRequests: {path: './ViewRequests/:user', component: ViewRequests},
+  ServiceCategoryList: { path: '/ServiceCategoryList', component: ServiceCategoryList},
   NotFound: { path: "*", component: NotFound }
 };
