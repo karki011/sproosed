@@ -1,0 +1,13 @@
+.INFO {
+    font-size: 20px;
+    width: 360px;
+    height: 56px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.UnderLine{
+    border-bottom: 1px solid #0000001F;
+    opacity: 1;
+}

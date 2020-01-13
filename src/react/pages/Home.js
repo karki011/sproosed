@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from "react-redux"
 import { basicAction } from "../../redux/actionCreators"
-import {RequestList} from "../components/index"
+import {Request} from "../components/index"
+import "./Home.css"
 
 class Home extends React.Component {
   render(){
     console.log(this.props.basicReducerState)
     return (
       <div className="App">
-                <h1>My Requests</h1>
-                <button>Request Services</button>
-                <h3>Open Requests</h3>
-                <RequestList />
-                <h3>Past Jobs</h3>
-                <RequestList />
+                <div className="Requests">Open Requests</div>
+              
+                <Request />
+                <Request />
+                <Request />
+                <a href=" " className="floating-btn">+</a>
       </div>
     );
   }
