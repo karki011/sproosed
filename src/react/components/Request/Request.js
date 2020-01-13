@@ -13,7 +13,7 @@ class Request extends React.Component {
   render() {
     const useStyles = makeStyles({
       card: {
-        width,
+        minwidth:275,
       },
       bullet: {
         display: 'inline-block',
