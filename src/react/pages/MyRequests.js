@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ViewRequests extends React.Component {
+class MyRequests extends React.Component {
   render(){
     return (
         <p>This is the requests page</p>
@@ -8,4 +8,4 @@ class ViewRequests extends React.Component {
   }
 }
 
-export default ViewRequests
+export default MyRequests

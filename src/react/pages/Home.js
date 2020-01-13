@@ -8,6 +8,7 @@ class Home extends React.Component {
   render(){
     console.log(this.props.basicReducerState)
     return (
+      <>
       <div className="App">
                 <div className="Requests">Open Requests</div>
               
@@ -16,6 +17,7 @@ class Home extends React.Component {
                 <Request />
                 <a href=" " className="floating-btn">+</a>
       </div>
+      </>
     );
   }
 }
