@@ -16,10 +16,22 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import { Copyright } from "..";
 import "./LoginForm.css";
+import {connect} from 'react-redux'
+import * as actionCreators from "../../../redux/actionCreators"
+import {Redirect} from 'react-router-dom'
 
 class LoginForm extends React.Component {
   state = { username: "", password: "" };
-  
+
+  handleLogin = e => {
+    e.preventDefault();
+    this.props.login(this.state);
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
     const useStyles = makeStyles(theme => ({
       paper: {
@@ -51,17 +63,18 @@ class LoginForm extends React.Component {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={useStyles.form} noValidate>
+          <form className={useStyles.form} onSubmit={this.handleLogin} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Email Address"
-              name="email"
+              label="Username"
+              name="username"
               autoComplete="email"
               autoFocus
+              onChange={this.handleChange}
             />
             <TextField
               variant="outlined"
@@ -73,6 +86,7 @@ class LoginForm extends React.Component {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={this.handleChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -100,6 +114,8 @@ class LoginForm extends React.Component {
               </Grid>
             </Grid>
           </form>
+          {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 400) && <h3>{this.props.loginState.result.message}</h3>}
+          {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 200) && <Redirect to="/home"/>}
         </div>
         <Box mt={8}>
           <Copyright />
@@ -109,4 +125,12 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+function mapStateToProps(state){
+  let login = {...state["auth"]["login"]}
+  return {loginState: login}
+}
+let mapDispatchToProps = {
+    "login": actionCreators["login"]
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

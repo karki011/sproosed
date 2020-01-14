@@ -3,9 +3,22 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import "./Request.css"
 import { RequestList } from "..";
+import {connect} from "react-redux"
+import {Redirect} from 'react-router-dom'
+import * as actionCreators from "../../../redux/actionCreators"
 
 class Request extends React.Component {
+  componentDidMount(){
+    if(this.props.loginState.result){
+      this.props.getRequests()
+    }
+  }
   render() {
+    if(!this.props.loginState.result){
+      return (
+        <Redirect to="/" />
+      )
+    }
     return (
       <div className="wrapper">
         <CardContent>
@@ -23,4 +36,13 @@ class Request extends React.Component {
   }
 }
 
-export default Request;
+function mapStateToProps(state){
+  let getRequests = {...state["requests"]["getRequests"]}
+  let login = {...state["auth"]["login"]}
+  return {getRequestsState: getRequests, loginState: login}
+}
+let mapDispatchToProps = {
+    "getRequests": actionCreators["getRequests"]
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Request);
