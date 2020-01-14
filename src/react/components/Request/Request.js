@@ -7,6 +7,7 @@ import { connect } from "react-redux"
 import { Redirect } from 'react-router-dom'
 import * as actionCreators from "../../../redux/actionCreators"
 import moment from "moment";
+import {trees,arrow} from "../../images"
 
 class Request extends React.Component {
   componentDidMount() {
@@ -26,9 +27,16 @@ class Request extends React.Component {
         <h1>hello</h1>
       );
     }
-    if (this.props.getRequestsState.result.requests.length === 0){
+    if (this.props.getRequestsState.result.statusCode === 404){
       //No Requests
-      return <h1>No requests found!</h1>
+      return (
+        <div>
+        <div className="afterLoginPage">Sproose up your yard</div>
+      <img src={trees} alt="trees" className="trees" />
+      <div className= "afterLoginPage">Request a service</div> 
+      <img src={arrow} alt="arrow" className="arrow"/>
+      </div>
+      )
     }
     const getRequest = this.props.getRequestsState.result.requests
     return getRequest.map(request => {
