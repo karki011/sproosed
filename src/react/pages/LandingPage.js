@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Logo, Grass } from '../images'
 import Button from '@material-ui/core/Button';
 import './LandingPage.css'
+import { NavLink } from 'react-router-dom'
+
 
 class LandingPage extends Component {
     render() {
@@ -25,9 +27,9 @@ class LandingPage extends Component {
                          See in real time who matches your job requirements and pick the vendor that matches your budget.
                          Quick and easy payment systems and reviews help you save time, money and headaches.
             </h3>
-                            <Button variant = 'contained' color = 'primary'>LOG IN</Button>
-                            <p className = 'or'>or</p>
-                            <Button variant = 'contained' color = 'secondary'>SIGN UP</Button>
+                        <Button variant='contained' color='primary'><NavLink className='links' to='/login'>LOG IN</NavLink></Button>
+                        <p className='or'>or</p>
+                        <Button variant='contained' color='secondary'><NavLink className='links' to='/register'>SIGN UP</NavLink></Button>
                     </div>
                 </div>
             </>
