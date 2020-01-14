@@ -7,7 +7,7 @@ export const getRequests = () => (dispatch, getState) => {
     })
 
     let user = getState().auth.login.result.username
-
+    
     fetch(domain + `/request?username=${user}`)
     .then(res => res.json())
     .then(requests => {
