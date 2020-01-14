@@ -29,7 +29,7 @@ const getRequest = this.props.getRequestsState.result.requests
 return getRequest.map(request => {
     return (
       
-      <div className="wrapper">
+      <div className="requestwrapper">
         <CardContent>
           <Typography style={{ fontSize: "21px" }}>{request.text}</Typography>
           <Typography style={{ fontSize: "19px" }} color="textSecondary">
