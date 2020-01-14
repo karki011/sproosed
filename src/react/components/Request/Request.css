@@ -1,12 +1,16 @@
 .requestwrapper{
     border-bottom: 1px solid #0000001F;
     opacity:1;
-    width: 385px;
+    width: 375px;
     margin: -10px;
 }
 .trees{
-    height: 245px;
-    width: 354px;
+    height: 130px;
+    width: 300px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%
 }
 .afterLoginPage{
     color: #2B5A01;
@@ -18,4 +22,10 @@
 .arrow{
     position: absolute;
     left: 35vw
+}
+@media(min-height: 800px){
+    .trees{
+        height: 240px;
+        width: 354px;
+    }
 }
