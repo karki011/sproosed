@@ -12,9 +12,9 @@ body{
     overflow: scroll;
 }
 .logo{
-    width: 80%;
+    width: 50%;
     height: 30%;
-    padding: 2%;
+    padding: 5%;
 }
 .background {
     pointer-events: none;
