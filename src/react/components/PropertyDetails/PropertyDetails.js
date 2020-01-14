@@ -76,7 +76,7 @@ function StyledRadio(props) {
           <FormControlLabel value="> 0.5 acres" control={<StyledRadio />} label="> 0.5 acres" />
         </RadioGroup>
       </FormControl>
-      <input />
+      <input placeholder="Additional notes (ex. approx sqft of driveway/walkway, dog in yard, etc.)" style={{'height':'100px', 'width':'80%'}}/>
       </>
     );
   }
