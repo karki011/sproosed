@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Logo, Grass } from '../images'
+import Button from '@material-ui/core/Button';
 import './LandingPage.css'
 
 class LandingPage extends Component {
@@ -8,8 +9,8 @@ class LandingPage extends Component {
             <>
                 <div className='wrapper'>
                     <img src={Grass} className='background' alt='background' />
-                    <div className = 'imageHolder'>
-                    <img className='logo' src={Logo} alt='logo' />
+                    <div className='imageHolder'>
+                        <img className='logo' src={Logo} alt='logo' />
                     </div>
                     <div className='groundskeeper'>
                         <h1>Let over 500 local Groundskeepers sproose up your lawn</h1>
@@ -24,6 +25,9 @@ class LandingPage extends Component {
                          See in real time who matches your job requirements and pick the vendor that matches your budget.
                          Quick and easy payment systems and reviews help you save time, money and headaches.
             </h3>
+                            <Button variant = 'contained' color = 'primary'>LOG IN</Button>
+                            <p className = 'or'>or</p>
+                            <Button variant = 'contained' color = 'secondary'>SIGN UP</Button>
                     </div>
                 </div>
             </>
