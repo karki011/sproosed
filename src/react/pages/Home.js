@@ -17,6 +17,7 @@ class Home extends React.Component {
                 <Request />
                 <a href=" " className="floating-btn">+</a>
       </div>
+
       </>
     );
   }
