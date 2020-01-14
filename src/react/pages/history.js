@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from "react-redux"
 import {Request, NavBar } from "../components"
+
 
 class History extends React.Component {
   render(){
@@ -19,4 +19,4 @@ class History extends React.Component {
   }
 }
 
-export default (History);
+export default History
