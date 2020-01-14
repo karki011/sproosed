@@ -2,7 +2,7 @@ import React from "react";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import "./Request.css";
-import { BidsList } from "../index";
+import { BidsList, PacmanLoader } from "../index";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as actionCreators from "../../../redux/actionCreators";
@@ -21,10 +21,14 @@ class Request extends React.Component {
     }
     if (this.props.getRequestsState.result === null) {
       //Loading
-      return <h1>hello</h1>;
+      return (
+        <div className="spinner">
+          <PacmanLoader color={"#2AB397"} />
+        </div>
+      );
     }
     if (this.props.getRequestsState.result.statusCode === 404) {
-      //No Requestsgit 
+      //No Requestsgit
       return (
         <div>
           <div className="afterLoginPage">Sproose up your yard</div>

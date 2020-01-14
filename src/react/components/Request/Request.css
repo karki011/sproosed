@@ -4,6 +4,12 @@
     width: 375px;
     margin: -10px;
 }
+.spinner{
+    display:block;
+    margin-left:45%;
+    margin-right:55%;
+    padding-top: 50%;
+}
 .trees{
     height: 130px;
     width: 300px;
