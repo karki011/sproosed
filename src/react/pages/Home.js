@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from "react-redux"
 import { NavBar } from "../components"
 import {Request} from "../components/index"
 import "./Home.css"
 
 class Home extends React.Component {
   render(){
+    console.log(this.props.basicReducerState)
     return (
       <>
       <NavBar />
@@ -22,4 +22,4 @@ class Home extends React.Component {
   }
 }
 
-export default (Home);
+export default Home
