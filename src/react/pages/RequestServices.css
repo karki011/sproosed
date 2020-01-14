@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#requestServices{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center */
+    margin: -5px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom:5px;
+    
+}
+
+#submitButton {
+    width: 80%;
+    background-color: orange;
+    color: white;
+    border-radius: 7px;
+}
