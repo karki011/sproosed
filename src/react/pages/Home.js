@@ -13,10 +13,10 @@ class Home extends React.Component {
                 <div className="Requests">Open Requests</div>
               
                 <Request />
-                <Request />
-                <Request />
+
                 <a href=" " className="floating-btn">+</a>
       </div>
+
       </>
     );
   }
