@@ -15,10 +15,10 @@ class LandingPage extends Component {
                         <img className='logo' src={Logo} alt='logo' />
                     </div>
                     <div className='groundskeeper'>
-                        <h1>Let over 500 local Groundskeepers sproose up your lawn</h1>
+                        <h3>Let over 500 local Groundskeepers sproose up your lawn</h3>
                     </div>
                     <div className='paragraph'>
-                        <h3>
+                        <h4>
                             The gig economy has come to your front yard.
                         Sproosed is your next generation solution to on-demand lawn care.
                         Browse from our selection of registered local lawn care specialists
@@ -26,10 +26,10 @@ class LandingPage extends Component {
                          Grass, Brush, Overgrowth, Gardens, Weeding, Tree-removal, etc…
                          See in real time who matches your job requirements and pick the vendor that matches your budget.
                          Quick and easy payment systems and reviews help you save time, money and headaches.
-            </h3>
-                        <Button variant='contained' color='primary'><NavLink className='links' to='/login'>LOG IN</NavLink></Button>
+            </h4>
+                        <Button variant='contained' color='primary'><NavLink className='login-link' to='/login'>LOG IN</NavLink></Button>
                         <p className='or'>or</p>
-                        <Button variant='contained' color='secondary'><NavLink className='links' to='/register'>SIGN UP</NavLink></Button>
+                        <Button variant='contained' color='default'><NavLink className='signup-link' to='/register'>SIGN UP</NavLink></Button>
                     </div>
                 </div>
             </>
