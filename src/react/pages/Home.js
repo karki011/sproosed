@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavBar } from "../components"
 import {Request} from "../components/index"
+import {NavLink} from "react-router-dom"
 import "./Home.css"
 
 class Home extends React.Component {
@@ -14,7 +15,7 @@ class Home extends React.Component {
               
                 <Request />
 
-                <a href=" " className="floating-btn">+</a>
+                <NavLink className="floating-btn" to="/request-services">+</NavLink>
       </div>
 
       </>
