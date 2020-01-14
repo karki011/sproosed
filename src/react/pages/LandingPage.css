@@ -12,9 +12,9 @@ body{
     overflow: scroll;
 }
 .logo{
-    width: 80%;
+    width: 50%;
     height: 30%;
-    padding: 2%;
+    padding: 5%;
 }
 .background {
     pointer-events: none;
@@ -42,6 +42,7 @@ body{
     color: #FFFFFF;
     text-shadow: 0px 3px 6px #00000029;
     opacity: 1;
+    padding: 3%;
 }
 .imageHolder {
     display: flex;
@@ -51,6 +52,9 @@ body{
 .or{
     text-align: center;
 }
-.links{
+.login-link{
     color: white;
+}
+.signup-link{
+    color: black;
 }
