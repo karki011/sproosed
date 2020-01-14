@@ -9,10 +9,12 @@ body{
     width: 100vw;
     margin: 0;
     padding: 0;
+    overflow: scroll;
 }
 .logo{
     width: 80%;
     height: 30%;
+    padding: 2%;
 }
 .background {
     pointer-events: none;
@@ -23,12 +25,15 @@ body{
     opacity: 0.7;
 }
 .paragraph{
+    display: flex;
+    flex-direction: column;
     text-align: left;
     letter-spacing: 0;
     color: #20272B;
     text-shadow: 0px 3px 6px #00000029;
     background: #FFFFFF80 0% 0% no-repeat padding-box;
     opacity: 1;
+    padding: 3%;
 }
 .groundskeeper{
     text-align: center;
@@ -38,8 +43,14 @@ body{
     text-shadow: 0px 3px 6px #00000029;
     opacity: 1;
 }
-.bleh {
+.imageHolder {
     display: flex;
     width: 100%;
     justify-content: center;
+}
+.or{
+    text-align: center;
+}
+.links{
+    color: white;
 }
