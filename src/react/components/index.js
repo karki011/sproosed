@@ -12,3 +12,4 @@ export { default as ServiceCategories } from "./ServiceCategories/ServiceCategor
 
 //global exports
 export { Switch, Route, Link } from "react-router-dom";
+export { PacmanLoader } from "react-spinners"
