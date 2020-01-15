@@ -1,3 +1,9 @@
 :root{
     font-family:  -apple-system, BlinkMacSystemFont,"Roboto";
 }
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
