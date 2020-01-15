@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar } from "../components"
+import { NavBar, CustomerCard } from "../components"
 import "./Profile.css"
 
 class Profile extends React.Component {
@@ -8,6 +8,7 @@ class Profile extends React.Component {
     return (
       <>
       <NavBar />
+      <CustomerCard />
       </>
     );
   }

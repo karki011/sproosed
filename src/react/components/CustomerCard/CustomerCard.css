@@ -1,0 +1,28 @@
+#container {
+  top: 206px;
+  left: 24px;
+  width: 327px;
+  height: 100px;
+  text-align: left;
+font: Regular 14px/20px Roboto;
+letter-spacing: 0;
+color: #000000DE;
+opacity: 1;
+}
+
+#header {
+  font-size: 24px;
+  color: #078b75;
+}
+
+#address {
+  width: 177px;
+  height: 29px;
+  font-size: 14px;
+}
+
+#information {
+  width: 327px;
+  height: 100px;
+  font-size: 14px;
+}
