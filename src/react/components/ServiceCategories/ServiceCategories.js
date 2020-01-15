@@ -4,8 +4,8 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import clsx from 'clsx';
+// import "./RequestServices.css";
 
 const useStyles = makeStyles({
     root: {
@@ -68,10 +68,11 @@ function StyledRadio(props) {
   function CustomizedRadios(props) {
     return (
       <FormControl component="fieldset">
-        <FormLabel component="legend">Request Service</FormLabel>
-        <RadioGroup defaultValue="Lawn Care & Landscaping" aria-label="Request Service" name="customized-radios" onChange={props.onChange}>
+        <RadioGroup defaultValue="Lawn Care & Landscaping" aria-label="Choose Service" name="customized-radios" onChange={props.onChange}>
           <FormControlLabel value="Lawn Care & Landscaping" control={<StyledRadio />} label="Lawn Care & Landscaping" />
+          <hr />
           <FormControlLabel value="Leaf Removal" control={<StyledRadio />} label="Leaf Removal" />
+          <hr />
           <FormControlLabel value="Snow Removal" control={<StyledRadio />} label="Snow Removal" />
         </RadioGroup>
       </FormControl>

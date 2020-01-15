@@ -1,6 +1,5 @@
 import React from "react";
-import { ServiceCategories, PropertyDetails } from "../components";
-import { NavBar } from "../components";
+import { ServiceCategories } from "../components";
 import "./RequestServices.css";
 import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
@@ -39,14 +38,28 @@ class RequestServices extends React.Component {
     }
     return (
       <>
-        <NavBar />
+        <div id="header">REQUEST SERVICES</div>
         <div id="requestServices">
+          <span id="chooseServices">Choose Services</span>
+          <br />
+          <form>
           <ServiceCategories onChange={this.setServiceCategory}/>
           <br />
-          <PropertyDetails />
           <br />
+            <span id="additionalInformation"> Additional Information</span>
+            <br />
+            <br />
+            <input type='text' placeholder="Property details here"/>
+            <br />
+            <br />
+            <hr />
+            <br />
+            <input type='text' placeholder="Special Instructions"/>
+            <br />
+            <br />
           <input id="submitButton" type="submit" onClick={this.sendRequest}/>
           {this.state.success && <Redirect to={{pathname:"/home", state: {success:true}}}/>}
+          </form>
         </div>
       </>
     );
