@@ -1,11 +1,10 @@
 import React from "react";
 import { TextField, Button } from "@material-ui/core";
-import { Logo, facebook, google } from '../../images'
+import { Logo } from '../../images'
 import "./RegisterForm.css";
 import { connect } from 'react-redux'
 import * as actionCreators from "../../../redux/actionCreators"
 import { Redirect } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
   state = { username: "", password: "",};
