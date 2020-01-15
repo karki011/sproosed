@@ -39,7 +39,7 @@ class Request extends React.Component {
       )
     }
     const getRequest = this.props.getRequestsState.result.requests;
-    return getRequest.map(request => {
+    return getRequest.reverse().map(request => {
       if(this.props.isCompleted === request.isCompleted){
         return (
           <div className="requestwrapper">
@@ -48,7 +48,7 @@ class Request extends React.Component {
               <Typography style={{ fontSize: "19px" }} color="textSecondary">
                 {moment(request.createdAt).format("MMM Do YYYY")}
               </Typography>
-              {request.bids.length > 0 && <BidsList bids={request.bids} />}
+              {request.bids.length > 0 && <BidsList bids={request.bids} isCompleted={request.isCompleted} />}
             </CardContent>
           </div>
         );
