@@ -40,18 +40,19 @@ class Request extends React.Component {
     }
     const getRequest = this.props.getRequestsState.result.requests
     return getRequest.map(request => {
-      return (
-
-        <div className="requestwrapper">
-          <CardContent>
-            <Typography style={{ fontSize: "21px" }}>{request.text}</Typography>
-            <Typography style={{ fontSize: "19px" }} color="textSecondary">
-              {moment(request.createdAt).format("MMM Do YYYY")}
-            </Typography>
-            {request.bids.length > 0 && <BidsList bids={request.bids} />}
-          </CardContent>
-        </div>
-      );
+      if(this.props.isCompleted === request.isCompleted){
+        return (
+          <div className="requestwrapper">
+            <CardContent>
+              <Typography style={{ fontSize: "21px" }}>{request.text}</Typography>
+              <Typography style={{ fontSize: "19px" }} color="textSecondary">
+                {moment(request.createdAt).format("MMM Do YYYY")}
+              </Typography>
+              {request.bids.length > 0 && <BidsList bids={request.bids} />}
+            </CardContent>
+          </div>
+        );
+      }
     });
   }
 }
