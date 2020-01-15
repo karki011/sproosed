@@ -47,6 +47,7 @@ class Request extends React.Component {
             <Typography style={{ fontSize: "19px" }} color="textSecondary">
               {moment(request.createdAt).format("MMM Do YYYY")}
             </Typography>
+            {request.bids.length === 0 && <div className ="noBids">No Bids Yet</div>}
             {request.bids.length > 0 && <BidsList bids={request.bids} />}
           </CardContent>
         </div>

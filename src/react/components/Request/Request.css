@@ -29,6 +29,14 @@
     position: absolute;
     left: 35vw
 }
+.noBids{
+    color:#078B75;
+    font-size:20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-align: center;
+    padding-top: 1vh;
+}
 @media(min-height: 800px){
     .trees{
         height: 240px;
