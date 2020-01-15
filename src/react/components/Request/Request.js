@@ -31,10 +31,25 @@ class Request extends React.Component {
       //No Requestsgit
       return (
         <div>
-          <div className="afterLoginPage">Sproose up your yard</div>
-          <img src={trees} alt="trees" className="trees" />
-          <div className="afterLoginPage">Request a service</div>
-          <img src={arrow} alt="arrow" className="arrow" />
+        <div className="afterLoginPage">Sproose up your yard</div>
+      <img src={trees} alt="trees" className="trees" />
+      <div className= "afterLoginPage">Request a service</div> 
+      <img src={arrow} alt="arrow" className="arrow"/>
+      </div>
+      )
+    }
+    const getRequest = this.props.getRequestsState.result.requests
+    return getRequest.map(request => {
+      return (
+
+        <div className="requestwrapper" key={request.id}>
+          <CardContent>
+            <Typography style={{ fontSize: "21px" }}>{request.text}</Typography>
+            <Typography style={{ fontSize: "19px" }} color="textSecondary">
+              {moment(request.createdAt).format("MMM Do YYYY")}
+            </Typography>
+            {request.bids.length > 0 && <BidsList bids={request.bids} />}
+          </CardContent>
         </div>
       );
     }

@@ -6,7 +6,9 @@ import "./Home.css"
 
 class Home extends React.Component {
   render(){
-    console.log(this.props.basicReducerState)
+    if(this.props.location.state && this.props.location.state.success){
+      alert("Success posting a request!")
+    }
     return (
       <>
       <NavBar />

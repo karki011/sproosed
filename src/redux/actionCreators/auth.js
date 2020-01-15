@@ -7,7 +7,6 @@ export const login = loginData => dispatch => {
     dispatch({
         type: LOGIN.START
     });
-    console.log(url+"/login")
     return fetch(url + "/login", {
         method: "POST",
         headers: jsonHeaders,

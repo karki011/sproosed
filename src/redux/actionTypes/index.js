@@ -4,6 +4,7 @@ const createActionTypes = actionName => {
         START: ACTIONNAME + ".START",
         SUCCESS: ACTIONNAME + ".SUCCESS",
         FAIL: ACTIONNAME + ".FAIL",
+        INIT: ACTIONNAME + ".INIT"
     };
 };
 

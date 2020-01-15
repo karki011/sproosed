@@ -26,6 +26,8 @@ const postRequests = (state = defaultState, action) => {
                 loading: false,
                 error: action.payload
             }
+        case POST_REQUEST.INIT:
+            return defaultState
         default:
             return state
     }
