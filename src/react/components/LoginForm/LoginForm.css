@@ -1,0 +1,23 @@
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.logo{
+    width: 50%;
+    height: 30%;
+    padding: 5%;
+}
+.imageHolder-login {
+    padding-top: 15%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.sign-up-options{
+    text-align: center;
+}
+.facebook{
+    padding-right: 1%;
+}
