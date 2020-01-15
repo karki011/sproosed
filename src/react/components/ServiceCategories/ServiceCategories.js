@@ -65,11 +65,11 @@ function StyledRadio(props) {
     );
   }
 
-  function CustomizedRadios() {
+  function CustomizedRadios(props) {
     return (
       <FormControl component="fieldset">
         <FormLabel component="legend">Request Service</FormLabel>
-        <RadioGroup defaultValue="Lawn Care & Landscaping" aria-label="Request Service" name="customized-radios">
+        <RadioGroup defaultValue="Lawn Care & Landscaping" aria-label="Request Service" name="customized-radios" onChange={props.onChange}>
           <FormControlLabel value="Lawn Care & Landscaping" control={<StyledRadio />} label="Lawn Care & Landscaping" />
           <FormControlLabel value="Leaf Removal" control={<StyledRadio />} label="Leaf Removal" />
           <FormControlLabel value="Snow Removal" control={<StyledRadio />} label="Snow Removal" />

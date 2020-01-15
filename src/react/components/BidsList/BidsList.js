@@ -21,9 +21,8 @@ class BidsList extends React.Component {
     }
    
     return bids.map(bid => {
-console.log(bid)
       return (
-        <div className="UnderLine">
+        <div className="UnderLine" key={bid.id}>
         <div className="INFO">
           <div>{bid.groundskeeperName}</div>
           <div className="cost">{bid.bid}</div>

@@ -1,5 +1,5 @@
 import {GET_REQUESTS, POST_REQUEST} from "../actionTypes"
-import { domain, jsonHeaders, handleJsonResponse } from "./constants";
+import { domain, jsonHeaders } from "./constants";
 
 export const getRequests = () => (dispatch, getState) => {
     dispatch({
@@ -35,7 +35,7 @@ export const postRequests = requestText => (dispatch, getState) => {
 
     let body = {userID, username, text:requestText}
 
-    fetch(domain = "/request", {
+    fetch(domain + "/request", {
         method: "POST",
         headers: {...jsonHeaders, Authorization: "Bearer " + token},
         body: JSON.stringify(body)
@@ -52,5 +52,12 @@ export const postRequests = requestText => (dispatch, getState) => {
             type: POST_REQUEST.FAIL,
             payload: err
         })
+    })
+}
+
+export const clearPostRequests = () => dispatch => {
+    console.log("BIG POP")
+    return dispatch({
+        type: POST_REQUEST.INIT
     })
 }

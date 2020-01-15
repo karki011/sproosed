@@ -31,12 +31,12 @@ class Request extends React.Component {
       //No Requestsgit
       return (
         <div>
-          <div className="afterLoginPage">Sproose up your yard</div>
-          <img src={trees} alt="trees" className="trees" />
-          <div className="afterLoginPage">Request a service</div>
-          <img src={arrow} alt="arrow" className="arrow" />
-        </div>
-      );
+        <div className="afterLoginPage">Sproose up your yard</div>
+      <img src={trees} alt="trees" className="trees" />
+      <div className= "afterLoginPage">Request a service</div> 
+      <img src={arrow} alt="arrow" className="arrow"/>
+      </div>
+      )
     }
     const getRequest = this.props.getRequestsState.result.requests;
     return getRequest.reverse().map(request => {
