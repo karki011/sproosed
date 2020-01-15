@@ -8,15 +8,45 @@ body {
     flex-direction: column;
     /* align-items: center */
     margin: -5px;
-    padding-top: 10px;
-    padding-left: 15px;
+    padding-top: 20px;
+    padding-left: 25px;
     padding-bottom:5px;
     
 }
 
 #submitButton {
-    width: 80%;
-    background-color: orange;
+    
+    background-color:#078B75;
     color: white;
-    border-radius: 7px;
+    width: 328px;
+    height: 36px;
+    /* margin: auto; */
+}
+
+#header{
+    display: flex;
+    height: 89px;
+    background-color:#3f51b5;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin: auto;
+}
+
+#chooseServices{
+    font-size: 24px;
+    color: #078B75;
+}
+
+#additionalInformation{
+    font-size: 24px;
+    color: #078B75;
+}
+
+hr{
+    background-color: #bdbdbd;
+    width: 328px;
+    
+
 }
