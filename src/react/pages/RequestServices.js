@@ -2,22 +2,65 @@ import React from "react";
 import { ServiceCategories, PropertyDetails } from "../components";
 import { NavBar } from "../components";
 import "./RequestServices.css";
+import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
+import * as actionCreators from "../../redux/actionCreators";
+
 
 class RequestServices extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      serviceCategory: "Lawn Care & Landscaping",
+      success: false,
+    }
+
+    this.setServiceCategory = this.setServiceCategory.bind(this)
+    this.sendRequest = this.sendRequest.bind(this)
+  }
+
+  setServiceCategory(e){
+    this.setState({serviceCategory: e.target.value})
+  }
+
+  sendRequest(){
+    this.props.postRequests(this.state.serviceCategory)
+  }
+
   render() {
+    if (!this.props.loginState.result) {
+      return (
+        <Redirect to="/" />
+      )
+    }
+    if(this.props.postRequestsState.result){
+      this.props.clearPostRequests()
+      this.setState({success: true})
+    }
     return (
       <>
         <NavBar />
         <div id="requestServices">
-          <ServiceCategories />
+          <ServiceCategories onChange={this.setServiceCategory}/>
           <br />
           <PropertyDetails />
           <br />
-          <input id="submitButton" type="submit" />
+          <input id="submitButton" type="submit" onClick={this.sendRequest}/>
+          {this.state.success && <Redirect to={{pathname:"/home", state: {success:true}}}/>}
         </div>
       </>
     );
   }
 }
 
-export default RequestServices;
+function mapStateToProps(state) {
+  let postRequestsState = { ...state["requests"]["postRequest"] }
+  let login = { ...state["auth"]["login"] }
+  return { postRequestsState: postRequestsState, loginState: login }
+}
+let mapDispatchToProps = {
+  postRequests: actionCreators["postRequests"],
+  clearPostRequests: actionCreators["clearPostRequests"]
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RequestServices);
