@@ -22,13 +22,13 @@ class LoginForm extends React.Component {
   render() {
     return (
       <React.Fragment>
-          <div className='imageHolder'>
+          <div className='imageHolder-login'>
             <img src={Logo} alt='logo' className='logo' />
           </div>
           <form className='login-form' onSubmit={this.handleLogin}>
             <TextField
               margin='normal'
-              id="email"
+              id="Username"
               label="Username"
               name="username"
               autoFocus
@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
             <Button
               type="submit"
               variant="contained"
-              color="primary"
+              color="default"
             >
               submit
               </Button>

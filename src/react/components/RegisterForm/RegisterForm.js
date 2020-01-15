@@ -1,145 +1,93 @@
 import React from "react";
-import {
-  Container,
-  CssBaseline,
-  Avatar, 
-  Typography,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Button,
-  Grid,
-  Box,
-  Link,
-} from "@material-ui/core";
-// import Link from "."; Will need to switch this to react-router later
-import { makeStyles } from '@material-ui/core/styles';
-import { Copyright } from "..";
+import { TextField, Button } from "@material-ui/core";
+import { Logo, facebook, google } from '../../images'
 import "./RegisterForm.css";
+import { connect } from 'react-redux'
+import * as actionCreators from "../../../redux/actionCreators"
+import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-class RegisterForm extends React.Component {
-  state = { username: "", password: "" };
-  
+class LoginForm extends React.Component {
+  state = { username: "", password: "",};
+
+  handleLogin = e => {
+    e.preventDefault();
+    this.props.login(this.state);
+  };
+
   render() {
-    const useStyles = makeStyles(theme => ({
-        paper: {
-          marginTop: theme.spacing(8),
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        },
-        avatar: {
-          margin: theme.spacing(1),
-          backgroundColor: theme.palette.secondary.main,
-        },
-        form: {
-          width: '100%', // Fix IE 11 issue.
-          marginTop: theme.spacing(3),
-        },
-        submit: {
-          margin: theme.spacing(3, 0, 2),
-        },
-      }));
-    
     return (
-        <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={useStyles.paper}>
-          <Avatar className={useStyles.avatar}>
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sproosed
-          </Typography>
-          <form className={useStyles.form} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="name"
-                  name="name"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="name"
-                  label="Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="address"
-                  label="Address"
-                  name="address"
-                  autoComplete="address"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="confirmPassword"
-                  label="Confirm Password"
-                  type="confirmPassword"
-                  id="confirmPassword"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={useStyles.submit}
-            >
-              Sign Up
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Link href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
+      <React.Fragment>
+        <div className='imageHolder-register'>
+          <img src={Logo} alt='logo' className='logo' />
         </div>
-        <Box mt={5}>
-          <Copyright />
-        </Box>
-      </Container>
+        <form className='login-form' onSubmit={this.handleLogin}>
+          <TextField
+            margin='normal'
+            id="Username"
+            label="Username"
+            name="username"
+            autoFocus
+            required
+            onChange={this.handleChange}
+          />
+            <TextField
+              margin='normal'
+              name="email"
+              label="email"
+              type="email"
+              id="email"
+              required
+              onChange={this.handleChange}
+            />
+              <TextField
+              margin='normal'
+              name="Address"
+              label="Address"
+              type="Address"
+              id="Address"
+              required
+              onChange={this.handleChange}
+            />
+          <TextField
+            margin='normal'
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            required
+            onChange={this.handleChange}
+          />
+          <TextField
+            margin='normal'
+            name="password"
+            label="Confirm-Password"
+            type="password"
+            id="password"
+            required
+            onChange={this.handleChange}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="default"
+          >
+            SIGN UP
+              </Button>
+        </form>
+        {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 400) && <h3>{this.props.loginState.result.message}</h3>}
+        {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 200) && <Redirect to="/home" />}
+      </React.Fragment>
     );
   }
 }
 
-export default RegisterForm;
+function mapStateToProps(state) {
+  let login = { ...state["auth"]["login"] }
+  return { loginState: login }
+}
+let mapDispatchToProps = {
+  "login": actionCreators["login"]
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
