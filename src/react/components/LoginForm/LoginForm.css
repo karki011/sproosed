@@ -1,17 +1,22 @@
-.login-container{
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFF0;
-    z-index: -1;
-}
 .login-form{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding-bottom: 5%;
 }
 .logo{
-    
+    width: 50%;
+    height: 30%;
+    padding: 5%;
+}
+.imageHolder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.sign-up-options{
+    text-align: center;
+}
+.facebook{
+    padding-right: 1%;
 }

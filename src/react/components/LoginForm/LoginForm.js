@@ -1,16 +1,16 @@
 import React from "react";
-import { Button, TextField } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
+import { Logo, facebook, google } from '../../images'
 import "./LoginForm.css";
 import { connect } from 'react-redux'
-import { Logo } from '../../images'
 import * as actionCreators from "../../../redux/actionCreators"
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
   state = { username: "", password: "" };
 
   handleLogin = e => {
-    console.log('hello')
     e.preventDefault();
     this.props.login(this.state);
   };
@@ -22,8 +22,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className='login-container'>
-        <img className = 'logo' src={Logo} alt='logo' />
+          <div className='imageHolder'>
+            <img src={Logo} alt='logo' className='logo' />
+          </div>
           <form className='login-form' onSubmit={this.handleLogin}>
             <TextField
               margin='normal'
@@ -51,9 +52,17 @@ class LoginForm extends React.Component {
               submit
               </Button>
           </form>
+          <div className = 'sign-up-options'>
+          <p>or login with</p>
+            <img className = 'facebook 'src = {facebook} alt = 'google' />
+            <img className = 'google' src = {google} alt = 'facebook' />
+          </div>
+          <div className = 'sign-up-options'>
+            <p>Need an account?</p>
+            <Link to = './register'>Sign Up</Link>
+          </div>
           {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 400) && <h3>{this.props.loginState.result.message}</h3>}
           {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 200) && <Redirect to="/home" />}
-        </div>
       </React.Fragment>
     );
   }
