@@ -22,7 +22,8 @@ class RequestServices extends React.Component {
     this.setState({serviceCategory: e.target.value})
   }
 
-  sendRequest(){
+  sendRequest(e){
+    e.preventDefault()
     this.props.postRequests(this.state.serviceCategory)
   }
 
