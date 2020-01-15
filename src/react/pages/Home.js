@@ -15,7 +15,7 @@ class Home extends React.Component {
       <div className="App">
                 <div className="Requests">Open Requests</div>
               
-                <Request />
+                <Request isCompleted={false}/>
 
                 <NavLink className="floating-btn" to="/request-services">+</NavLink>
       </div>
