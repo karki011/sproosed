@@ -1,14 +1,16 @@
 import React from 'react';
 import { NavBar, CustomerCard } from "../components"
 import "./Profile.css"
+import { NavLink } from "react-router-dom";
+
 
 class Profile extends React.Component {
   render(){
-    console.log(this.props.basicReducerState)
     return (
       <>
       <NavBar />
       <CustomerCard />
+      <NavLink className="floating-btn" to="/request-services"></NavLink>
       </>
     );
   }
