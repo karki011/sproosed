@@ -11,7 +11,7 @@ class BidsList extends React.Component {
           <div>{bid.groundskeeperName}</div>
           <div className="cost">{bid.bid}</div>
         </div>
-        <div className="accept" onClick={()=>{this.props.acceptBid(this.props.requestID, bid.id)}}>ACCEPT</div>
+        {!this.props.isCompleted && <div className="accept" onClick={()=>{this.props.acceptBid(this.props.requestID, bid.id)}}>ACCEPT</div>}
       </div>
 
         

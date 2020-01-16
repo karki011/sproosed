@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
             <Link to = './register'>Sign Up</Link>
           </div>
           {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 400) && <h3>{this.props.loginState.result.message}</h3>}
-          {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 200) && <Redirect to="/home" />}
+          {(this.props.loginState && this.props.loginState.result && this.props.loginState.result.statusCode === 200) && <Redirect to="/user" />}
       </React.Fragment>
     );
   }

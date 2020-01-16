@@ -12,7 +12,6 @@ class History extends React.Component {
           <div className="Requests">Past Requests</div>
           <Request isCompleted={true}/>
           <NavLink className="floating-btn" to="/request-services">
-            +
           </NavLink>
         </div>
       </>
