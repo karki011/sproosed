@@ -52,12 +52,12 @@ class RequestServices extends React.Component {
             <span id="additionalInformation"> Additional Information</span>
             <br />
             <br />
-            <input type='text' placeholder="Property details here"/>
+            <textarea type='text' placeholder="Property details here"/>
             <br />
             <br />
             <hr />
             <br />
-            <input type='text' placeholder="Special Instructions"/>
+            <textarea type='text' placeholder="Special Instructions"/>
             <br />
             <br />
           <input id="submitButton" type="submit" onClick={this.sendRequest}/>
