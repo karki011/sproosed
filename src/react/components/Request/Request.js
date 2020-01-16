@@ -49,8 +49,8 @@ class Request extends React.Component {
       )
     }
     const getRequest = this.props.getRequestsState.result.requests;
-    return getRequest.reverse().map(request => {
-      if(this.props.isCompleted === request.isCompleted){
+    const fileteredRequests = getRequest.reverse().filter(request => this.props.isCompleted === request.isCompleted)
+    return fileteredRequests.map(request => {
         return (
           <div className="requestwrapper" key={request.id}>
             <CardContent>
@@ -62,8 +62,7 @@ class Request extends React.Component {
             </CardContent>
           </div>
         );
-      }
-    });
+      });
   }
 }
 

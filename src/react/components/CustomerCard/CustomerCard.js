@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./CustomerCard.css";
 // import { connect } from "react-redux";
 
@@ -17,7 +16,7 @@ class CustomerCard extends React.Component {
             />
           </div>
           <span id="userName">@theRealLilRaeRae</span>
-          <hr class="lineBreak" />
+          <hr className="lineBreak" />
           <div id="address">
             {" "}
             123 North South Street Blvd. Indianapolis, IN 12345
@@ -33,7 +32,7 @@ class CustomerCard extends React.Component {
           </div>
           <div id="propertyPhotos">
             Property Photos
-            <hr class="lineBreak" />
+            <hr className="lineBreak" />
             <div id="propPicContainer">
               <img
                 id="frontYard"
@@ -51,15 +50,12 @@ class CustomerCard extends React.Component {
           </div>
           <div id="openRequests">
             Open Requests
-            <p class="text">Weed my flower bed every other weekend</p>
-            <p class="date">Jan 15, 2020</p>
-            <p class="text">Clear away fallen branches</p>
-            <p class="date">Jan 20, 2020</p>
-            <hr class="lineBreak" />
+            <p className="text">Weed my flower bed every other weekend</p>
+            <p className="date">Jan 15, 2020</p>
+            <p className="text">Clear away fallen branches</p>
+            <p className="date">Jan 20, 2020</p>
+            <hr className="lineBreak" />
           </div>
-          <NavLink className="floating-btn" to="/request-services">
-            +
-          </NavLink>
         </div>
       </>
     );
