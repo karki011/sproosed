@@ -28,6 +28,8 @@ class RequestServices extends React.Component {
   }
 
   render() {
+    let willRedirect = false;
+
     if (!this.props.loginState.result) {
       return (
         <Redirect to="/" />
@@ -35,7 +37,7 @@ class RequestServices extends React.Component {
     }
     if(this.props.postRequestsState.result){
       this.props.clearPostRequests()
-      this.setState({success: true})
+      willRedirect = true
     }
     return (
       <>
@@ -59,7 +61,7 @@ class RequestServices extends React.Component {
             <br />
             <br />
           <input id="submitButton" type="submit" onClick={this.sendRequest}/>
-          {this.state.success && <Redirect to={{pathname:"/home", state: {success:true}}}/>}
+          {willRedirect && <Redirect to={{pathname:"/home", state: {success:true}}}/>}
           </form>
         </div>
       </>

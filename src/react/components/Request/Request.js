@@ -10,11 +10,21 @@ import moment from "moment";
 import { trees, arrow } from "../../images";
 
 class Request extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.acceptBid = this.acceptBid.bind(this)
+  }
   componentDidMount() {
-    if (this.props.loginState.result) {
+    if (this.props.loginState.result && !this.props.getRequestsState.result) {
       this.props.getRequests();
     }
   }
+
+  acceptBid(requestID, bidID){
+    this.props.acceptBid(requestID, bidID)
+  }
+
   render() {
     if (!this.props.loginState.result) {
       return <Redirect to="/" />;
@@ -27,7 +37,7 @@ class Request extends React.Component {
         </div>
       );
     }
-    if (this.props.getRequestsState.result.statusCode === 404) {
+    if (this.props.getRequestsState.result.statusCode === 404 || (this.props.getRequestsState.result && this.props.getRequestsState.result.requests.every(request => request.isCompleted) && !this.props.isCompleted)) {
       //No Requestsgit
       return (
         <div>
@@ -48,7 +58,7 @@ class Request extends React.Component {
               <Typography style={{ fontSize: "19px" }} color="textSecondary">
                 {moment(request.createdAt).format("MMM Do YYYY")}
               </Typography>
-              {request.bids.length > 0 && <BidsList bids={request.bids} isCompleted={request.isCompleted} />}
+              {request.bids.length > 0 && <BidsList bids={request.bids} isCompleted={request.isCompleted} acceptBid={this.acceptBid} requestID={request.id}/>}
             </CardContent>
           </div>
         );
@@ -59,11 +69,13 @@ class Request extends React.Component {
 
 function mapStateToProps(state) {
   let getRequests = { ...state["requests"]["getRequests"] };
+  let acceptBid = {...state["requests"]["acceptBid"]}
   let login = { ...state["auth"]["login"] };
-  return { getRequestsState: getRequests, loginState: login };
+  return { getRequestsState: getRequests, loginState: login, acceptBidState: acceptBid };
 }
 let mapDispatchToProps = {
-  getRequests: actionCreators["getRequests"]
+  getRequests: actionCreators["getRequests"],
+  acceptBid: actionCreators["acceptBid"]
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Request);
