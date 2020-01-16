@@ -63,14 +63,21 @@ body {
 }
 .login-btn {
 	background-color: #078b75 !important;
-	width: 375px;
+	display: flex;
+	justify-content: center;
+	width: 60%;
 }
 .signup-link {
 	color: black;
 }
 .signup-btn {
-	width: 375px;
+	display: flex;
+	justify-content: center;
+	width: 60%;
 }
 a {
 	text-decoration: none !important;
+}
+.button {
+	text-align: center;
 }

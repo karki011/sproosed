@@ -27,9 +27,12 @@ class LandingPage extends Component {
                          See in real time who matches your job requirements and pick the vendor that matches your budget.
                          Quick and easy payment systems and reviews help you save time, money and headaches.
             </h4>
-                        <Button variant='contained' color='primary' className="login-btn"><NavLink className='login-link' to='/login'>LOG IN</NavLink></Button>
+            <div className="button">
+            <Button variant='contained' color='primary' className="login-btn"><NavLink className='login-link' to='/login'>LOG IN</NavLink></Button>
                         <p className='or'>or</p>
                         <Button variant='contained' color='default' className="signup-btn"><NavLink className='signup-link' to='/register'>SIGN UP</NavLink></Button>
+            </div>
+                        
                     </div>
                 </div>
             </>
