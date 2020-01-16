@@ -16,14 +16,10 @@
 }
 .Requests{
     border-bottom: 1px solid #0000001F;
-    width:375px;
+    width:100%;
     text-align: left;
     font-size: 32px;
     letter-spacing: 0;
     color: #078B75;
-    opacity: 1;
-    margin: -5px;
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-bottom:5px; 
+    
 }

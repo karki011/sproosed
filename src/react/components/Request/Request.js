@@ -42,7 +42,7 @@ class Request extends React.Component {
     return getRequest.reverse().map(request => {
       if(this.props.isCompleted === request.isCompleted){
         return (
-          <div className="requestwrapper">
+          <div className="requestwrapper" key={request.id}>
             <CardContent>
               <Typography style={{ fontSize: "21px" }}>{request.text}</Typography>
               <Typography style={{ fontSize: "19px" }} color="textSecondary">
