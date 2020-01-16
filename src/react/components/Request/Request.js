@@ -48,6 +48,7 @@ class Request extends React.Component {
       </div>
       )
     }
+    // "MMM Do YYYY"
     const getRequest = this.props.getRequestsState.result.requests;
     const fileteredRequests = getRequest.reverse().filter(request => this.props.isCompleted === request.isCompleted)
     return fileteredRequests.map(request => {
@@ -56,7 +57,8 @@ class Request extends React.Component {
             <CardContent>
               <Typography style={{ fontSize: "21px" }}>{request.text}</Typography>
               <Typography style={{ fontSize: "19px" }} color="textSecondary">
-                {moment(request.createdAt).format("MMM Do YYYY")}
+
+                {moment(request.createdAt, moment.defaultFormatUtc).format("MMM Do YYYY")}
               </Typography>
               {request.bids.length > 0 && <BidsList bids={request.bids} isCompleted={request.isCompleted} acceptBid={this.acceptBid} requestID={request.id}/>}
             </CardContent>
