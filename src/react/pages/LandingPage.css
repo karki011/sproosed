@@ -35,6 +35,12 @@ body {
 	opacity: 1;
 	padding: 3%;
 }
+.company-description {
+	font: 16px/25px Roboto;
+	color: #20272b;
+	text-shadow: 0px 3px 6px #00000029;
+	opacity: 1;
+}
 .groundskeeper {
 	text-align: center;
 	font: Black 33px/43px Roboto;
@@ -55,8 +61,15 @@ body {
 .login-link {
 	color: white;
 }
+.login-btn {
+	background-color: #078b75 !important;
+	width: 375px;
+}
 .signup-link {
 	color: black;
+}
+.signup-btn {
+	width: 375px;
 }
 a {
 	text-decoration: none !important;
