@@ -1,4 +1,4 @@
-import {GET_REQUESTS, POST_REQUEST} from "../actionTypes"
+import {GET_REQUESTS, POST_REQUEST, ACCEPT_BID} from "../actionTypes"
 import { domain, jsonHeaders } from "./constants";
 
 export const getRequests = () => (dispatch, getState) => {
@@ -56,8 +56,38 @@ export const postRequests = requestText => (dispatch, getState) => {
 }
 
 export const clearPostRequests = () => dispatch => {
-    console.log("BIG POP")
-    return dispatch({
+    dispatch({
         type: POST_REQUEST.INIT
+    })
+    dispatch(getRequests())
+}
+
+export const acceptBid = (id, bidID) => (dispatch, getState) => {
+    dispatch({
+        type: ACCEPT_BID.SUCCESS
+    })
+    let token = getState().auth.login.result.token
+
+    let body = {id:id, bidID: bidID}
+
+    fetch(domain + "/request/acceptBid", {
+        method: "POST",
+        headers: {...jsonHeaders, Authorization: "Bearer " + token},
+        body: JSON.stringify(body)
+    })
+    .then(res => res.json())
+    .then(result => {
+        dispatch({
+            type: ACCEPT_BID.SUCCESS,
+            payload: result
+        })
+
+        dispatch(getRequests())
+    })
+    .catch(err => {
+        return dispatch({
+            type: ACCEPT_BID.FAIL,
+            payload: err
+        })
     })
 }
